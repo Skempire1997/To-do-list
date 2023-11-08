@@ -2,42 +2,41 @@ const taskEntry = document.getElementById("taskEntry");
 const taskList = document.getElementById("task-list");
 
 function addTask() {
-if (taskEntry.value=="") {
-alert(" Enter a Task");
-} 
-else {
-let li = document.createElement("li");
-li.innerHTML = taskEntry.value;
-taskList.appendChild(li);
-let span = document.createElement("span");
-span.innerHTML =  " &#10060;"
-li.appendChild(span);
-saveData();
-}
-taskEntry.value="";
+    if (taskEntry.value=="") {
+      alert(" Enter a Task");
+     } 
+    else {
+      let li = document.createElement("li");
+      li.innerHTML = taskEntry.value;
+      taskList.appendChild(li);
+      let span = document.createElement("span");
+      span.innerHTML =  "&#10060;"
+      li.appendChild(span);
+      saveData();
+     }
+      taskEntry.value="";
 }
 
-taskList.addEventListener(
-"click",
-function (event)
+taskList.addEventListener("click",
+   function (event)
 {
-if (event.target.tagName ==="LI")
-{
-event.target.classList.toggle("checked");
-saveData();
-}
-else if (event.target.tagName === "SPAN")
-{
-event.target.parentElement.remove();
-saveData();
-}
-console.log(event);
-   },false
+         if (event.target.tagName ==="LI")
+         {
+         event.target.classList.toggle("checked");
+         saveData();
+         }
+         else if (event.target.tagName === "SPAN")
+         {
+         event.target.parentElement.remove();
+         saveData();
+         }
+         console.log(event);
+         },false
 );
 function saveData() {
-localStorage.setItem("myTask",taskList.innerHTML);
+      localStorage.setItem("myTask",taskList.innerHTML);
 }
 function displayData() {
-taskList.innerHTML = localStorage.getItem("myTask");
+      taskList.innerHTML = localStorage.getItem("myTask");
 }
 displayData();

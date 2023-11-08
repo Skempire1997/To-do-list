@@ -3,6 +3,8 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+body{
+}
 .container{
 	position: fixed;
 	top: 0px;
@@ -13,10 +15,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-image: url(https://images.pexels.com/photos/356407/pexels-photo-356407.jpeg?cs=srgb&dl=pexels-pixabay-356407.jpg&fm=jpg);
+		background-size: cover;
 
 }
 .to-do{
-	border: 1px dotted; black;
+	border: 1px solid; black;
 	max-width: 400px;
 	width: 100%;
 	height: 300px;
@@ -24,6 +28,8 @@
 	border-radius: 30px;
 	overflow: hidden;
 	padding: 20px;
+	background: transparent;
+	box-shadow: 0px 0px 20px black;
 }
 .task-div{
 	margin-top: 20px;
@@ -38,15 +44,15 @@
 }
 h2{
 	align-items: center;
-	color: royalblue;
+	color: floralwhite;
 	text-decoration: underline;
 	animation-name: anih2;
-	animation-duration: 5s;
+	animation-duration: 10s;
 	animation-iteration-count: infinite;
 }
 @keyframes anih2{
-	0%{opacity: 1; text-shadow: 0px 0px 10px royalblue;transform: scale(1.0);}
-	50%{opacity: 0.5;text-shadow: 0px 0px 10px royalblue;transform: scale(1.1); }
+	0%{opacity: 0; text-shadow: 0px 0px 10px black;transform: scale(1.0);}
+	50%{opacity: 1;text-shadow: 0px 0px 10px black;transform: scale(1.1); }
 	100%{opacity: 0; transform: scale(1.0);}
 
 
@@ -66,21 +72,31 @@ button{
 	font-weight: bolder;
 	cursor: pointer;
 }
-#btn1 button:hover{
+button:hover{
 	transform: scale(0.9);
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 1px 10px black;
 }
 input{
 	margin-top: 10px;
+	background-color: black;
 	flex: 1;
-	border: none;
-	outline: none;
+	border: black;
+	outline: black;
 	background: transparent;
+	cursor: text;
+
+
 }
+
 ul li{
 	list-style-type: none;
 	padding: 8px 20px 10px;
 	position: relative;
+	margin-left: 20px;
+	color: floralwhite;
+}
+ul li background-image:hover{
+	text-shadow: 0px 0px 10px black;
 }
 ul li::before{
 	content: '';
@@ -91,6 +107,7 @@ ul li::before{
 	position: absolute;
 	top: 17;
 	left: 0;
+	cursor: pointer;
 
 }
 ul li.checked{
@@ -101,8 +118,16 @@ ul li.checked{
 }
 ul li.checked::before{
 	background-image: url(https://i.pinimg.com/originals/35/24/1b/35241b8a93f91abc6e644623155de1f8.png);
-}
-image:hover{
-	cursor: pointer;
 
+}
+
+span{
+	margin-left: 30px;
+	margin-right: 0px;
+	text-decoration: none;
+}
+span:hover{
+	cursor: pointer;
+	transform: scale(0.9);
+	text-shadow: 0px 0px 20px black;
 }
